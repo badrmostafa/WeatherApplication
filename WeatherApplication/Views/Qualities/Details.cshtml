@@ -1,0 +1,34 @@
+﻿@model WeatherApplication.Models.Classes.Quality
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Quality</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicationID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicationID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FeatureID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FeatureID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.QualityID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

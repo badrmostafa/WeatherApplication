@@ -1,0 +1,66 @@
+﻿@model WeatherApplication.Models.Classes.Application
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Application</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Head)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Head)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Degree)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Degree)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Text1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Text1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Text2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Text2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Text3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Text3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ApplicationID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,121 @@
+﻿@model PagedList.IPagedList<WeatherApplication.Models.Classes.Description>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css"/>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (Html.BeginForm("Index","Descriptions",FormMethod.Get))
+{
+    <p>
+        Find By Text1,Text2,Text3 And Head1:@Html.TextBox("search",ViewBag.filter as string)
+        <input type="submit" value="Search" class="btn btn-primary " />
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            Title1
+        </th>
+        <th>
+        Title2
+        </th>
+        <th>
+       Text1
+        </th>
+        <th>
+           Degree1
+        </th>
+        <th>
+           Text2
+        </th>
+        <th>
+           Image1
+        </th>
+        <th>
+          Image2
+        </th>
+        <th>
+            @Html.ActionLink("Head1", "Index", new {sort=ViewBag.Head1 })
+        </th>
+        <th>
+           Description1
+        </th>
+        <th>
+           Humidity
+        </th>
+        <th>
+          Degree2
+        </th>
+        <th>
+          Text3
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Text1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Degree1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Text2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Image1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Image2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Head1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Humidity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Degree2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Text3)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DescriptionID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DescriptionID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DescriptionID })
+        </td>
+    </tr>
+}
+
+</table>
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) Of @Model.PageCount
+@Html.PagedListPager(Model, Page => Url.Action("Index", new { Page, sort = ViewBag.sort, filter = ViewBag.filter }));
+
+
+
+
+
+
+
+
+
+
+
+

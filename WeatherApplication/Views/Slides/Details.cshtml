@@ -1,0 +1,46 @@
+﻿@model WeatherApplication.Models.Classes.Slide
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Slide</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BackgroundImage1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BackgroundImage1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BackgroundImage2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BackgroundImage2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BackgroundImage3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BackgroundImage3)
+        </dd>
+
+       
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SlideID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

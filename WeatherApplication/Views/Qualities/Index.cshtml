@@ -1,0 +1,49 @@
+﻿@model PagedList.IPagedList<WeatherApplication.Models.Classes.Quality>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css"/>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (Html.BeginForm("Index","Qualities",FormMethod.Get))
+{
+    <p>
+        Find By Head Of Application:@Html.TextBox("search",ViewBag.filter as string)
+        <input type="submit" value="Search" class="btn btn-primary"/>
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("Head", "Index", new {sort=ViewBag.Head })
+        </th>
+        <th>
+         Head1
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Application.Head)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Feature.Head1)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.QualityID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.QualityID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.QualityID })
+        </td>
+    </tr>
+}
+
+</table>
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) Of @Model.PageCount
+@Html.PagedListPager(Model, Page => Url.Action("Index", new { Page, sort = ViewBag.sort, filter = ViewBag.filter }));

@@ -1,0 +1,218 @@
+﻿
+@{ 
+    Layout = "~/Views/Home/_LayoutHome.cshtml";
+
+}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        <!--Home Sections-->
+
+        <section id="home" class="home">
+            <div class="container">
+                <div class="row">
+                    <div class="main_home">
+                        <div class="col-md-6">
+                            <div class="home_text">
+                                <h1 class="text-white">@ViewBag.application.Head</h1>
+                            </div>
+
+                            <div class="home_btns m-top-40">
+                                <a href="" class="btn btn-danger m-top-20">Download</a>
+                                <a href="" class="btn btn-primary m-top-20">Features</a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="phone_one phone_attr1 text-center sm-m-top-50">
+                                <div class="attr_deg">@ViewBag.application.Degree&deg;</div>
+                                <div class="attr_rio text-uppercase">Rio</div>
+                                <div class="attr_sun text-uppercase text-white">Sunny</div>
+                                <div class="attr_lon text-uppercase text-white">London</div>
+                                <img src="@ViewBag.application.Image" alt="" />
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="scrooldown">
+                        <a href="#features"><i class="fa fa-chevron-down"></i></a>
+                    </div>
+
+                </div><!--End off row-->
+            </div><!--End off container -->
+        </section> <!--End off Home Sections-->
+        <!--Featured Section-->
+        <section id="features" class="features">
+            <div class="container">
+                <div class="row">
+                    <div class="main_features p-top-100">
+                        <div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+                            <div class="head_title text-center">
+                                <h2>@ViewBag.feature.Head1</h2>
+                                <h5>@ViewBag.feature.Head2</h5>
+                            </div>
+                        </div>
+                        @foreach (var item in ViewBag.fe)
+                        {
+
+                            <div class="col-md-4">
+                                <div class="features_item sm-m-top-30">
+                                    <div class="f_item_icon">
+                                        <i class="@item.Icon"></i>
+                                    </div>
+                                    <div class="f_item_text">
+                                        <h3>@item.Head3</h3>
+                                        <p>
+                                        @item.Description
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        }
+                            </div>
+                </div><!-- End off row -->
+            </div><!-- End off container -->
+        </section><!-- End off Featured Section-->
+
+
+
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="main_drag roomy-50">
+                        <div class="col-md-12">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide" style="background-image:url(@ViewBag.slide.BackgroundImage1)"></div>
+                                    <div class="swiper-slide" style="background-image:url(@ViewBag.slide.BackgroundImage2)"></div>
+                                    <div class="swiper-slide" style="background-image:url(@ViewBag.slide.BackgroundImage3)"></div>
+                                </div>
+                                <!-- If we need navigation buttons -->
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!--screen short section-->
+
+        <section id="screen_area" class="screen_area">
+            <div class="container">
+                <div class="row">
+                    <div class="main_screen">
+                        <div class="col-md-8 col-md-offset-2 col-sm-12">
+                            <div class="head_title text-center">
+                                <h2>@ViewBag.description.Title1</h2>
+                                <h5>@ViewBag.description.Title2</h5>
+                            </div>
+                        </div>
+
+                        <!-- Screen01-->
+                        @foreach (var item in ViewBag.de)
+                        {
+
+                            <div class="screen01 roomy-50">
+                                <div class="col-md-6">
+                                    <div class="screen01_img text-center">
+                                        <div class="attr_cloudy text-white">@item.Text1</div>
+                                        <div class="attr_deg2 text-white">@item.Degree1 &deg;</div>
+                                        <img src="@item.Image1" alt="" />
+                                        <h1 class="cloudy">@item.Text2</h1>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="screen01_content m-top-100">
+                                        <div class="screen01_content_img ">
+                                            <img src="@item.Image2" alt="" />
+                                        </div>
+                                        <h2 class="m-top-40">@item.Head1</h2>
+                                        <p class="m-top-20">
+                                            @item.Description1
+                                        </p>
+
+                                        <ul class="list-inline m-top-50">
+                                            <li class="text-center">@item.Humidity</li>
+                                            <li class="text-center">@item.Degree2 &deg; </li>
+                                            <li class="text-center">@item.Text3</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+<!--End off Screen01-->
+                       
+
+                    </div>
+                </div><!--End off row-->
+            </div><!--End off container-->
+        </section><!--End off Screen01 Area Section -->
+        <!--People Section-->
+        <section id="reviews" class="reviews m-top-100">
+            <div class="container">
+                <div class="row">
+                    <div class="main_reviews">
+                        <div class="col-md-8 col-md-offset-2 col-sm-12">
+                            <div class="head_title text-center">
+                                <h2>@ViewBag.review.Title1</h2>
+                                <h5>@ViewBag.review.Title2</h5>
+                            </div>
+                        </div>
+                        @foreach (var item in ViewBag.re)
+                        {
+                            <div class="reviews_content">
+                                <div class="col-md-6">
+                                    <div class="reviews_item m-top-40">
+                                        <i class="@item.Icon"></i>
+                                        <h3>@item.Description</h3>
+                                        <h5>@item.Name</h5>
+                                     
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                                <!-- End off col-md-6 -->
+                           
+                    </div><!-- End off Main People -->
+                </div><!-- End off row -->
+            </div><!-- End off container -->
+        </section><!-- End off People Section-->
+        <!--App Download Section-->
+        <section id="download" class="download m-top-100">
+            <div class="download_overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="main_download ">
+                        <div class="col-md-6">
+                            <div class="download_item roomy-100">
+                                <h2 class="text-white">@ViewBag.download.Head</h2>
+                                <h5 class="text-white m-top-20">
+                                    @ViewBag.download.Description
+                                </h5>
+
+                                <div class="download_app m-top-30">
+                                    <a href=""><img src="@ViewBag.download.Image1" alt="" /></a>
+                                    <a href=""><img src="@ViewBag.download.Image2" alt="" /></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="download_item m-top-70">
+                                <img class="app_right" src="@ViewBag.download.Image3" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- scroll up-->
+        <div class="scrollup">
+            <a href="#"><i class="fa fa-chevron-up"></i></a>
+        </div><!-- End off scroll up -->
+
+
+     

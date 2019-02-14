@@ -1,0 +1,59 @@
+﻿@model PagedList.IPagedList<WeatherApplication.Models.Classes.Slide>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (Html.BeginForm("Index","Slides",FormMethod.Get))
+{
+    <p>
+        Find By BackgroundImage1,BackgroundImage2 And BackgroundImage3:@Html.TextBox("search",ViewBag.filter as string)
+        <input type="submit" value="Search" class="btn btn-primary"/>
+    </p>
+}
+<table class="table">
+    <tr>
+        
+        <th>
+            @Html.ActionLink("BackgroundImage1", "Index", new {sort=ViewBag.BackgroundImage1 })
+        </th>
+        <th>
+           BackgroundImage2
+        </th>
+        <th>
+            BackgroundImage3 
+        </th>
+     
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.BackgroundImage1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BackgroundImage2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BackgroundImage3)
+        </td>
+        
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SlideID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SlideID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SlideID })
+        </td>
+    </tr>
+}
+
+</table>
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) Of @Model.PageCount
+@Html.PagedListPager(Model, Page => Url.Action("Index", new { Page, sort = ViewBag.sort, filter = ViewBag.filter }));

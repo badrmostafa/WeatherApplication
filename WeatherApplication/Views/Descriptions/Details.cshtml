@@ -1,0 +1,114 @@
+﻿@model WeatherApplication.Models.Classes.Description
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Description</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Text1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Text1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Degree1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Degree1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Text2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Text2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Head1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Head1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Humidity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Humidity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Degree2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Degree2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Text3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Text3)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DescriptionID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
